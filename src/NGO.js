@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 function NGO() {
   return (
@@ -9,11 +10,15 @@ function NGO() {
 
       <div className="text-center">
         <h3 className="my-5">CSOs, NGOs and consultancy firms: </h3>
-        <a className="nav-link" href="https://tanyak.org/">Tanyak </a>
+        <a className="nav-link" href="https://tanyak.org/">
+          Tanyak{" "}
+        </a>
         <h4>Healthcare companion </h4>
         <h4>Sphere India </h4>
         <h4>Devlens </h4>
         <h4>Knowledge solutions</h4>
+      <br></br>
+      <Footer />
       </div>
     </div>
   );
