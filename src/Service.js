@@ -6,7 +6,6 @@ import Card3 from "./Card3";
 import Card4 from "./Card4";
 import Card5 from "./Card5";
 
-
 import img1 from "../src/Pictures/img1.png";
 import img2 from "../src/Pictures/img2.png";
 import img3 from "../src/Pictures/img3.png";
@@ -16,48 +15,29 @@ import img6 from "../src/Pictures/img6.png";
 import Footer from "./Footer";
 
 function Service() {
-    return ( <
-        >
-        <
-        div className = "my-5" >
-        <
-        h1 className = "text-center" > Our Services < /h1> <
-        /div>
+  return (
+    <>
+      <div className="my-5">
+        <h1 className="text-center"> Our Services </h1>{" "}
+      </div>
 
-        <
-        div className = "container-fluid mb-5" >
-        <
-        div className = "row" >
-        <
-        div className = "col-10 mx-auto" >
-        <
-        div className = "row gy-4" >
-        <
-        Card title = "Backend Development"
-        imgsrc = { img1 }
-        /> <
-        Card1 title = "Android Development"
-        imgsrc = { img2 }
-        /> <
-        Card2 title = "Database Management"
-        imgsrc = { img3 }
-        /> <
-        Card3 title = "Frontend Development"
-        imgsrc = { img4 }
-        /> <
-        Card4 title = "Digital Marketing"
-        imgsrc = { img5 }
-        /> 
-       < Card5 title = "Video Creation"
-        imgsrc = { img6 }/> 
+      <div className="container-fluid mb-5">
+        <div className="row">
+          <div className="col-10 mx-auto">
+            <div className="row gy-4">
+              <Card title="Backend Development" imgsrc={img1} />{" "}
+              <Card1 title="Android Development" imgsrc={img2} />{" "}
+              <Card2 title="Database Management" imgsrc={img3} />{" "}
+              <Card3 title="Frontend Development" imgsrc={img4} />{" "}
+              <Card4 title="Digital Marketing" imgsrc={img5} />
+              <Card5 title="Video Creation" imgsrc={img6} />
+            </div>
+          </div>
         </div>
-         </div>
-         </div>
-         </div>
-         <Footer/>
-         </>
-        
-    );
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default Service;

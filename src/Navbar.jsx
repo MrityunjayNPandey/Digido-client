@@ -47,20 +47,20 @@ function Navbar() {
                     <NavLink
                       activeClassName="menu_active"
                       className="nav-link"
-                      to="/contact"
+                      to="/OurClients"
                     >
-                      Contact Us
+                      Our Clients
                     </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
                       activeClassName="menu_active"
                       className="nav-link"
-                      to="/OurClients"
+                      to="/contact"
                     >
-                      Our Clients
+                      Contact Us
                     </NavLink>
-                  </li>
+                  </li>                  
                 </ul>
               </div>
             </nav>
