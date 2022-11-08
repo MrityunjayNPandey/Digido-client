@@ -11,7 +11,6 @@ function Card2({ title, imgsrc }) {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">
             We have skilled developers who can offer Database services in various technologies like MySql, Postgres and sqlite  
-  
             </p>
             <NavLink to="/contact" className="btn btn-primary">
               Click Here

@@ -11,7 +11,6 @@ function Card4({ title, imgsrc }) {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">
             We have skilled individuals  who can offer digital marketing services like Search Engine Optimisation(SEO), Adsins and marketing on various social media platform.  
-   
             </p>
             <NavLink to="/contact" className="btn btn-primary">
               Click here

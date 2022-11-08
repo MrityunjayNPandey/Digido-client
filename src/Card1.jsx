@@ -11,7 +11,6 @@ function Card1({ title, imgsrc }) {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">
             We have skilled developers who can offer Application development services in various technologies like flutter, React Native and JAVA 
-  
             </p>
             <NavLink to="/contact" className="btn btn-primary">
               Get Quote

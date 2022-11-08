@@ -11,6 +11,15 @@ import OurClients from "./OurClients";
 import NGO from "./NGO";
 import Pvtorg from "./Pvtorg";
 import mfgindr from "./mfgindr";
+import Backend from "./Backend";
+import Android from "./Android";
+import DBM from "./DBM";
+import Dgtmkt from "./Dgtmkt";
+import Frntend from "./Frntend";
+import Videocreation from "./Videocreation";
+import gvt from "./gvt";
+import retail from "./retail";
+import media from "./media";
 
 function App() {
   return (
@@ -25,6 +34,16 @@ function App() {
         <Route exact path="/NGO" component={NGO} />
         <Route exact path="/Pvtorg" component={Pvtorg} />
         <Route exact path="/mfgindr" component={mfgindr} />
+        <Route exact path="/gvt" component={gvt} />
+        <Route exact path="/retail" component={retail} />
+        <Route exact path="/media" component={media} />
+        <Route exact path="/Backend" component={Backend} />
+        <Route exact path="/Android" component={Android} />
+        <Route exact path="/DBM" component={DBM} />
+        <Route exact path="/Dgtmkt" component={Dgtmkt} />
+        <Route exact path="/Frntend" component={Frntend} />
+        <Route exact path="/Videocreation" component={Videocreation} />
+
         <Redirect to="/" />
       </Switch>
     </>

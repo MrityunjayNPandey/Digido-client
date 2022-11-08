@@ -16,6 +16,9 @@ import img4 from "../src/Pictures/img4.png";
 import img5 from "../src/Pictures/img5.png";
 import img6 from "../src/Pictures/img6.png";
 import Footer from "./Footer";
+import Card9 from "./card9";
+import Card10 from "./card10";
+import Card11 from "./card11";
 
 function OurClients() {
   return (
@@ -48,9 +51,12 @@ function OurClients() {
               <Card6 title="CSOs, NGOs and consultancy firms" imgsrc={img1} />{" "}
               <Card7 title="Private Organizations" imgsrc={img2} />{" "}
               <Card8
-                title="Government, Manufacturing industries, retail, media etc"
+                title="Government"
                 imgsrc={img2}
               />{" "}
+              <Card9 title="industries" imgsrc={img2} />{" "}
+              <Card10 title="retail" imgsrc={img2} />{" "}
+              <Card11 title="media" imgsrc={img2} />{" "}
             </div>
           </div>
         </div>
