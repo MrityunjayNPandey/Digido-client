@@ -20,6 +20,7 @@ import Videocreation from "./Videocreation";
 import gvt from "./gvt";
 import retail from "./retail";
 import media from "./media";
+import GraphicDesigning from "./GraphicDesigning";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
         <Route exact path="/Dgtmkt" component={Dgtmkt} />
         <Route exact path="/Frntend" component={Frntend} />
         <Route exact path="/Videocreation" component={Videocreation} />
-
+        <Route exact path="/GraphicDesigning" component={GraphicDesigning} />
         <Redirect to="/" />
       </Switch>
     </>

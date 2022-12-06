@@ -30,6 +30,7 @@ function Service() {
               <Card3 title="Frontend Development" imgsrc={img4} />{" "}
               <Card4 title="Digital Marketing" imgsrc={img5} />
               <Card5 title="Video Creation" imgsrc={img6} />
+              <Card5 title="Graphic Designer" imgsrc={img6} />
             </div>
           </div>
         </div>

@@ -26,7 +26,6 @@ function Navbar() {
               <button className="navbar-toggler" type="button">
                 <span className="navbar-toggler-icon"></span>
               </button>
-
               <div
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
@@ -66,6 +65,9 @@ function Navbar() {
                         </li>
                         <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
                           <NavLink to='/Videocreation' className="nav-link">Video Creation</NavLink>
+                        </li>
+                        <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                          <NavLink to='/GraphicDesigning' className="nav-link">Graphic Designing</NavLink>
                         </li>
                       </ul>
                     ) : null}
