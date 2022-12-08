@@ -87,10 +87,18 @@
     margin-bottom: 100%;
     margin-top: 100%;
   }
+  #header {
+    margin-bottom: 100%;
+    margin-top: 100%;
+  }
 }
 
 @media screen and (min-width:700px) and (max-width: 1000px) {
   #common-1 {
+    margin-bottom: 35%;
+    margin-top: 35%;
+  }
+  #header {
     margin-bottom: 35%;
     margin-top: 35%;
   }

@@ -3,8 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import web from "../src/Pictures/img3.png";
 import Footer from "./Footer";
-
-
+import "./index.css";
 
 function Common({ name, imgsrc, visit, btname }) {
   return (
@@ -19,21 +18,18 @@ function Common({ name, imgsrc, visit, btname }) {
                     {name}
                     <strong className="brand-name"> Digido </strong>
                   </h1>
-                  <br/>
-                  <h3>
-                  OUR MISSION
-                  </h3>
+                  <br />
+                  <h3>OUR MISSION</h3>
                   <h2 className="my-3">
-                  To empower and support our clients with latest technology, innovations and providing them the best services while growing together.
-                 </h2>
-                 <h3>
-                 OUR VISION
-                  </h3>
-                 <h2 className="my-3">
-
-                 Building a resilient tomorrow with technology and innovations at their best and providing them best services while growing together.
-
-                
+                    To empower and support our clients with latest technology,
+                    innovations and providing them the best services while
+                    growing together.
+                  </h2>
+                  <h3>OUR VISION</h3>
+                  <h2 className="my-3">
+                    Building a resilient tomorrow with technology and
+                    innovations at their best and providing them best services
+                    while growing together.
                   </h2>
 
                   <div className="mt-3">
@@ -55,11 +51,10 @@ function Common({ name, imgsrc, visit, btname }) {
           </div>
         </div>
       </section>
-        <Footer/>
+      <Footer />
     </>
   );
 }
-
 
 function About() {
   return (
@@ -75,4 +70,3 @@ function About() {
 }
 
 export default About;
-

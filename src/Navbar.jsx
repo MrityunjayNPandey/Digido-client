@@ -6,12 +6,17 @@ import './style1.css'
 function Navbar() {
   const [open, setOpen] = React.useState(false);
   const [open1, setOpen2] = React.useState(false);
+  const [open2, setOpen3] = React.useState(false);
 
   const handleOpen = () => {
     setOpen(!open);
   };
   const handleOpen1 = () => {
     setOpen2(!open1);
+  };
+  const handleOpen2 = () => {
+    console.log("dsd");
+    setOpen3(!open2);
   };
 
   return (
@@ -24,8 +29,28 @@ function Navbar() {
                 Digido
               </NavLink>
               <button className="navbar-toggler" type="button">
-                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon" onClick={handleOpen2}>
+                </span>
               </button>
+              {open2 ? (
+                      <ul style={{ position: "absolute", marginLeft:"auto", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px", marginTop:"125px"}}>
+                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                          <NavLink to='/' className="nav-link">Home</NavLink>
+                        </div>
+                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                          <NavLink to='/service' className="nav-link">Services</NavLink>
+                        </div>
+                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                          <NavLink to='/about' className="nav-link">About Us</NavLink>
+                        </div>
+                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                          <NavLink to='/OurClients' className="nav-link">Our Clients</NavLink>
+                        </div>
+                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                          <NavLink to='/contact' className="nav-link">Contact Us</NavLink>
+                        </div>
+                      </ul>
+                    ) : null}
               <div
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
@@ -41,8 +66,7 @@ function Navbar() {
                     <NavLink
                       activeClassName="menu_active"
                       className="nav-link"
-                      to="/service"
-                      
+                      to="/service"                      
                     >
                       Services
                     </NavLink>
