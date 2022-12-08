@@ -24,13 +24,13 @@ function Service() {
         <div className="row">
           <div className="col-10 mx-auto">
             <div className="row gy-4">
+              <Card5 title="Graphic Designing" imgsrc={img6} />
               <Card title="Backend Development" imgsrc={img1} />{" "}
               <Card1 title="Android Development" imgsrc={img2} />{" "}
               <Card2 title="Database Management" imgsrc={img3} />{" "}
               <Card3 title="Frontend Development" imgsrc={img4} />{" "}
               <Card4 title="Digital Marketing" imgsrc={img5} />
               <Card5 title="Video Creation" imgsrc={img6} />
-              <Card5 title="Graphic Designer" imgsrc={img6} />
             </div>
           </div>
         </div>
