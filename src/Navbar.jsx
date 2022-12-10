@@ -28,12 +28,12 @@ function Navbar() {
               <NavLink className="navbar-brand" to="/">
                 Digido
               </NavLink>
-              <button className="navbar-toggler" type="button">
-                <span className="navbar-toggler-icon" onClick={handleOpen2}>
+              <button className="navbar-toggler" type="button" onClick={handleOpen2}>
+                <span className="navbar-toggler-icon">
                 </span>
               </button>
               {open2 ? (
-                      <ul style={{ position: "absolute", marginLeft:"auto", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px", marginTop:"125px"}}>
+                      <ul style={{ position: "fixed", right:"10px", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px", marginTop:"125px"}}>
                         <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
                           <NavLink to='/' className="nav-link">Home</NavLink>
                         </div>
