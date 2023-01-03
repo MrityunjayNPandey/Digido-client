@@ -14,8 +14,7 @@ function onClickButton(event) {
       .then(data => {
           document.querySelector("#msg").innerHTML = data;
           document.querySelector("#sub").value = "Submit"
-      });
-  
+      });  
 }
 
 
