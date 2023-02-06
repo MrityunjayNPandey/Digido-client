@@ -14,11 +14,10 @@ function NGO() {
           Tanyak{" "}
         </a>
         <h4>Healthcare companion </h4>
-        <h4>Sphere India </h4>
         <h4>Devlens </h4>
         <h4>Knowledge solutions</h4>
-      <br></br>
-      <Footer />
+        <br></br>
+        <Footer />
       </div>
     </div>
   );

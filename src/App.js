@@ -21,6 +21,8 @@ import gvt from "./gvt";
 import retail from "./retail";
 import media from "./media";
 import GraphicDesigning from "./GraphicDesigning";
+// import dashad from "./dashad";
+// import { Admin, Reesource } from "react-admin";
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />{" "}
+        {/* <Route exact path="/dashad" component={dashad} />{" "} */}
         <Route exact path="/about" component={About} />{" "}
         <Route exact path="/service" component={Service} />{" "}
         <Route exact path="/contact" component={Contact} />
