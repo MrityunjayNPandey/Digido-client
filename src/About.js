@@ -1,11 +1,36 @@
-import React from "react";
-// import Common from "./Common";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import web from "../src/Pictures/img3.png";
 import Footer from "./Footer";
 import "./index.css";
 
-function Common({ name, imgsrc, visit, btname }) {
+function About() {
+  const [About, setAbout] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:8000/About")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setAbout(data);
+      });
+  }, []);
+
+  return (
+    <>
+      <Common
+        name="Welcome to the world of"
+        imgsrc={About.img}
+        visit="/contact"
+        btname="Contact Us"
+        About={About}
+      />
+    </>
+  );
+}
+
+function Common({ name, imgsrc, visit, btname, About }) {
   return (
     <>
       <section id="header" className="d-flex align-items-center">
@@ -19,19 +44,10 @@ function Common({ name, imgsrc, visit, btname }) {
                     <strong className="brand-name"> Digido </strong>
                   </h1>
                   <br />
-                  <h3>OUR MISSION</h3>
-                  <h2 className="my-3">
-                    To empower and support our clients with latest technology,
-                    innovations and providing them the best services while
-                    growing together.
-                  </h2>
-                  <h3>OUR VISION</h3>
-                  <h2 className="my-3">
-                    Building a resilient tomorrow with technology and
-                    innovations at their best and providing them best services
-                    while growing together.
-                  </h2>
-
+                  <h3>{About.title1}</h3>
+                  <h2 className="my-3">{About.description1}</h2>
+                  <h3>{About.title2}</h3>
+                  <h2 className="my-3">{About.description2}</h2>
                   <div className="mt-3">
                     <NavLink to={visit} className="btn-get-started">
                       {btname}
@@ -51,20 +67,6 @@ function Common({ name, imgsrc, visit, btname }) {
           </div>
         </div>
       </section>
-      <Footer />
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <Common
-        name="Welcome to the world of"
-        imgsrc={web}
-        visit="/contact"
-        btname="Contact Us"
-      />
     </>
   );
 }

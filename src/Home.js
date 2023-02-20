@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Common from "./Common";
 
 import web from "../src/Pictures/img2.png";
-import Footer from "./Footer";
 
 function Home() {
+  const [Home, setHome] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:8000/Home")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setHome(data);
+      });
+  }, []);
+
   return (
     <>
       <div id="common-1">
         <Common
-          name="Grow your business with"
-          imgsrc={web}
+          name={Home.name}
+          imgsrc={Home.img}
+          Brand="Digido"
           visit="/service"
           btname="Get started"
+          data={Home}
         />
       </div>
-      <Footer />
     </>
   );
 }

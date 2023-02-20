@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Common from "./Common";
+import Service from "./Service";
 import './style1.css'
 
 
@@ -19,6 +21,30 @@ function Navbar() {
     setOpen3(!open2);
   };
 
+  const [Services, setServices] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/Services")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setServices(data);
+      });
+  }, []);
+
+  const [ourClients, setourClients] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/ourClients")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setourClients(data);
+      });
+  }, []);
+  
   return (
     <>
       <div className="container-fluid nav_bg">
@@ -72,27 +98,16 @@ function Navbar() {
                     </NavLink>
                     {open ? (
                       <ul className="menu" style={{position: "absolute", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px"}}>
-                        <li className="nav-item" style={{display:"block", marginRight:"20px"}} >
-                          <NavLink to='/Backend' className="nav-link">Backend Development</NavLink>
-                        </li>
-                        <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/Android' className="nav-link">Android Development</NavLink>
-                        </li>
-                        <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/DBM' className="nav-link">Database Management</NavLink>
-                        </li>
-                        <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/Frntend' className="nav-link">Frontend Development</NavLink>
-                        </li>
-                        <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/Dgtmkt' className="nav-link">Digital Marketing</NavLink>
-                        </li>
-                        <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/Videocreation' className="nav-link">Video Creation</NavLink>
-                        </li>
-                        <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/GraphicDesigning' className="nav-link">Graphic Designing</NavLink>
-                        </li>
+                        {Services && Services.map((Service, index) => (
+                            <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                              <NavLink 
+                                to={{
+                                  pathname:'./Service',
+                                  state:{index}
+                                }} 
+                              className="nav-link">{Service.title}</NavLink>
+                            </li>
+                        ))}
                       </ul>
                     ) : null}
                   </li>
@@ -116,24 +131,15 @@ function Navbar() {
                     </NavLink>
                     {open1 ? (
                       <ul className="menu" style={{position: "absolute", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px"}}>
-                      <li className="nav-item" style={{display:"block", marginRight:"20px"}} >
-                        <NavLink to='/NGO' className="nav-link">CSOs, NGOs and consultancy firms</NavLink>
-                      </li>
-                      <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                        <NavLink to='/Pvtorg' className="nav-link">Private Organizations</NavLink>
-                      </li>
-                      <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                        <NavLink to='/gvt' className="nav-link">Government</NavLink>
-                      </li>
-                      <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                        <NavLink to='/mfgindr' className="nav-link">Industries</NavLink>
-                      </li>
-                      <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                        <NavLink to='/retail' className="nav-link">Retail</NavLink>
-                      </li>
-                      <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                        <NavLink to='/media' className="nav-link">Media</NavLink>
-                      </li>
+                      {ourClients && ourClients.map((ourClient, index) => (
+                            <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
+                              <NavLink to={{
+                                  pathname:'./ourClients',
+                                  state:{index}
+                                }} 
+                               className="nav-link">{ourClient.title}</NavLink>
+                            </li>
+                        ))}
                     </ul>
                     ) : null}
                   </li>

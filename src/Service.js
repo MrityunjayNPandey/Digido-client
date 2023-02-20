@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import Card1 from "./Card1";
-import Card2 from "./Card2";
-import Card3 from "./Card3";
-import Card4 from "./Card4";
-import Card5 from "./Card5";
-
-import img1 from "../src/Pictures/img1.png";
-import img2 from "../src/Pictures/img2.png";
-import img3 from "../src/Pictures/img3.png";
-import img4 from "../src/Pictures/img4.png";
-import img5 from "../src/Pictures/img5.png";
-import img6 from "../src/Pictures/img6.png";
-import Footer from "./Footer";
+import { useLocation } from "react-router-dom";
 
 function Service() {
+  const [Services, setServices] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/Services")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setServices(data);
+      });
+  }, []);
+
+  let location = useLocation();
+  var idx = null;
+  if (location.state) {
+    console.log(location.state.index);
+    idx = location.state.index;
+  }
+
   return (
     <>
       <div className="my-5">
@@ -24,18 +31,26 @@ function Service() {
         <div className="row">
           <div className="col-10 mx-auto">
             <div className="row gy-4">
-              <Card5 title="Graphic Designing" imgsrc={img6} />
-              <Card title="Backend Development" imgsrc={img1} />{" "}
-              <Card1 title="Android Development" imgsrc={img2} />{" "}
-              <Card2 title="Database Management" imgsrc={img3} />{" "}
-              <Card3 title="Frontend Development" imgsrc={img4} />{" "}
-              <Card4 title="Digital Marketing" imgsrc={img5} />
-              <Card5 title="Video Creation" imgsrc={img6} />
+              {Services &&
+                Services.map((Service, index) => (
+                  <>
+                    <Card
+                      key={index}
+                      key1={index}
+                      indexshow={idx}
+                      title={Service.title}
+                      imgsrc={Service.img}
+                      description={Service.description}
+                      visit={Service.visit}
+                      btname={Service.btname}
+                      data={Service}
+                    />{" "}
+                  </>
+                ))}
             </div>
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
