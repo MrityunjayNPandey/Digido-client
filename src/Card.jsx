@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
 
 
-function Card({ title, imgsrc, description, visit, btname, data, indexshow = -1, key1}) {
+function Card({ title, imgsrc, description, visit, btname, data, indexshow = -1, key1, id}) {
 
   const [count, setCount] = useState(0);
 
@@ -19,13 +19,14 @@ function Card({ title, imgsrc, description, visit, btname, data, indexshow = -1,
     <>
       {count||(indexshow==key1) ? (
           <>
-          <div id="common-1">
+          <div id={title}>
           <Common
             name={title}
             imgsrc={imgsrc}
             visit={visit}
             btname={btname}
             data={data}
+            id={data}
           />
         </div>
         </>

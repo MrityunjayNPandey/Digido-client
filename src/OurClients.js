@@ -10,7 +10,7 @@ function OurClients() {
         return res.json();
       })
       .then((data) => {
-        setourClients(data);
+        setourClients(data); 
       });
   }, []);
 

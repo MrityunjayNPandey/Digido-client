@@ -3,7 +3,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Footer from "./Footer";
-
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";

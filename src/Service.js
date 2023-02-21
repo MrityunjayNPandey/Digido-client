@@ -17,6 +17,7 @@ function Service() {
 
   let location = useLocation();
   var idx = null;
+  console.log(location.state);
   if (location.state) {
     console.log(location.state.index);
     idx = location.state.index;

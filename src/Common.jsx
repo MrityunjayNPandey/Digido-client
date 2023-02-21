@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
 
-function Common({ name, Brand, imgsrc, visit, btname, data }) {
-  console.log("runnin");
+function Common({ name, Brand, imgsrc, visit, btname, data}) {
+
+  useEffect(() => {
+    window.location.href = "#" + name;
+  }, []);
+
   return (
     <>
-      <section id="header" className="d-flex align-items-center">
+      <section className="d-flex align-items-center">
         <div className="container-fluid nav_bg">
           <div className="row">
             <div className="col-10 mx-auto">
