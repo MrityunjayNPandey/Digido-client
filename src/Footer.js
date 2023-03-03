@@ -33,8 +33,7 @@ const Footer = () => {
                       class="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
-                      </path>
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                     </svg>
                   </a>
                   <a class="ml-3 text-gray-400" href={Footer.links.twitter}>
@@ -83,8 +82,7 @@ const Footer = () => {
                       <path
                         stroke="none"
                         d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                      >
-                      </path>
+                      ></path>
                       <circle cx="4" cy="4" r="2" stroke="none"></circle>
                     </svg>
                   </a>
@@ -98,17 +96,26 @@ const Footer = () => {
                 </h2>
                 <nav class="list-none mb-10">
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       Phone : {Footer.company.phone}
                     </a>
                   </li>
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       E-mail : {Footer.company.email}
                     </a>
                   </li>
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       Address : {Footer.company.address}
                     </a>
                   </li>
@@ -120,17 +127,26 @@ const Footer = () => {
                 </h2>
                 <nav class="list-none mb-10">
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       {Footer.support.link1}
                     </a>
                   </li>
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       {Footer.support.link2}
                     </a>
                   </li>
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       {Footer.support.link3}
                     </a>
                   </li>
@@ -142,17 +158,26 @@ const Footer = () => {
                 </h2>
                 <nav class="list-none mb-10">
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       {Footer.services.first}
                     </a>
                   </li>
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       {Footer.services.second}
                     </a>
                   </li>
                   <li>
-                    <a class="text-gray-400 hover:text-white">
+                    <a
+                      class="text-gray-400 hover:text-white"
+                      style={{ textDecoration: "none" }}
+                    >
                       {Footer.services.third}
                     </a>
                   </li>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Common from "./Common";
+import "./index.css";
 
 import web from "../src/Pictures/img2.png";
 

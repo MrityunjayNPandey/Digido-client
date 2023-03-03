@@ -1,9 +1,7 @@
+import "./index.css";
+import './style1.css'
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Common from "./Common";
-import Service from "./Service";
-import './style1.css'
-
 
 function Navbar() {
   const [open, setOpen] = React.useState(false);

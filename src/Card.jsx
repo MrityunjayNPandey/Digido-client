@@ -13,6 +13,7 @@ function Card({ title, imgsrc, description, visit, btname, data, indexshow = -1,
   };
 
   console.log(indexshow, key1, count)
+  console.log((indexshow==key1));
 
 
   return (
