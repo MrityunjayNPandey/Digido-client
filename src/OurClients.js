@@ -5,12 +5,12 @@ function OurClients() {
   const [ourClients, setourClients] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/ourClients")
+    fetch("https://digido-full.vercel.app/ourClients")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setourClients(data); 
+        setourClients(data);
       });
   }, []);
 

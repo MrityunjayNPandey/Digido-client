@@ -8,7 +8,7 @@ function About() {
   const [About, setAbout] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/About")
+    fetch("https://digido-full.vercel.app/About")
       .then((res) => {
         return res.json();
       })

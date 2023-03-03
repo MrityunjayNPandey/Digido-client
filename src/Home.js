@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import Common from "./Common";
 import "./index.css";
 
-import web from "../src/Pictures/img2.png";
-
 function Home() {
   const [Home, setHome] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/Home")
+    fetch("https://digido-full.vercel.app/Home")
       .then((res) => {
         return res.json();
       })
