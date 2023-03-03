@@ -7,10 +7,8 @@ function Common({ name, Brand, imgsrc, visit, btname, data}) {
   useEffect(() => {
     const element = document.getElementById(name);
     if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    // window.location.href = "#" + name;
   }, []);
 
   return (
