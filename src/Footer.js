@@ -4,7 +4,7 @@ const Footer = () => {
   const [Footer, setFooter] = useState(null);
 
   useEffect(() => {
-    fetch("https://digido-full.vercel.app/Footer")
+    fetch("http://localhost:8000/Footer")
       .then((res) => {
         return res.json();
       })
@@ -12,7 +12,6 @@ const Footer = () => {
         setFooter(data);
       });
   }, []);
-  if (Footer) console.log(Footer.company);
 
   return (
     <>
@@ -24,7 +23,7 @@ const Footer = () => {
             <div class="bg-gray-800 bg-opacity-0">
               <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                 <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-                  <a class="text-gray-400" href={Footer.links.facebook}>
+                  <a class="text-gray-400" href={Footer[9].link}>
                     <svg
                       fill="currentColor"
                       stroke-linecap="round"
@@ -36,7 +35,7 @@ const Footer = () => {
                       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                     </svg>
                   </a>
-                  <a class="ml-3 text-gray-400" href={Footer.links.twitter}>
+                  <a class="ml-3 text-gray-400" href={Footer[10].link}>
                     <svg
                       fill="currentColor"
                       stroke-linecap="round"
@@ -48,7 +47,7 @@ const Footer = () => {
                       <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                     </svg>
                   </a>
-                  <a class="ml-3 text-gray-400" href={Footer.links.instagram}>
+                  <a class="ml-3 text-gray-400" href={Footer[11].link}>
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -69,7 +68,7 @@ const Footer = () => {
                       <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
                     </svg>
                   </a>
-                  <a class="ml-3 text-gray-400" href={Footer.links.linkedin}>
+                  <a class="ml-3 text-gray-400" href={Footer[12].Link}>
                     <svg
                       fill="currentColor"
                       stroke="currentColor"
@@ -100,7 +99,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      Phone : {Footer.company.phone}
+                      Phone : {Footer[0].value}
                     </a>
                   </li>
                   <li>
@@ -108,7 +107,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      E-mail : {Footer.company.email}
+                      E-mail : {Footer[1].value}
                     </a>
                   </li>
                   <li>
@@ -116,7 +115,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      Address : {Footer.company.address}
+                      Address : {Footer[2].address}
                     </a>
                   </li>
                 </nav>
@@ -131,7 +130,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      {Footer.support.link1}
+                      {Footer[3].link}
                     </a>
                   </li>
                   <li>
@@ -139,7 +138,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      {Footer.support.link2}
+                      {Footer[4].link}
                     </a>
                   </li>
                   <li>
@@ -147,7 +146,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      {Footer.support.link3}
+                      {Footer[5].link}
                     </a>
                   </li>
                 </nav>
@@ -162,7 +161,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      {Footer.services.first}
+                      {Footer[6].value}
                     </a>
                   </li>
                   <li>
@@ -170,7 +169,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      {Footer.services.second}
+                      {Footer[7].value}
                     </a>
                   </li>
                   <li>
@@ -178,7 +177,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      {Footer.services.third}
+                      {Footer[8].value}
                     </a>
                   </li>
                 </nav>
