@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./Footer";
 
 function onClickButton(event) {
   let form = document.querySelector("form");

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -9,17 +9,10 @@ import Contact from "./Contact";
 import Service from "./Service";
 import Navbar from "./Navbar";
 import OurClients from "./OurClients";
-import img1 from "./Pictures/img1.png";
-import img2 from "./Pictures/img2.png";
-import img3 from "./Pictures/img3.png";
-import img4 from "./Pictures/img4.png";
-import img5 from "./Pictures/img5.png";
-import img6 from "./Pictures/img6.png";
 
 function App() {
   return (
     <>
-      <img src={img1} />
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />{" "}

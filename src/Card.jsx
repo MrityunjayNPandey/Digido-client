@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Common from "./Common";
-import { NavLink } from "react-router-dom";
-import Footer from "./Footer";
 
 
 function Card({ title, imgsrc, description, visit, btname, data, indexshow = -1, key1, id}) {

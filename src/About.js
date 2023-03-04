@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import web from "../src/Pictures/img3.png";
-import Footer from "./Footer";
 import "./index.css";
 
 function About() {
