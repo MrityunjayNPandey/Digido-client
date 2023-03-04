@@ -11,7 +11,8 @@ function Home() {
         return res.json();
       })
       .then((data) => {
-        setHome(data);
+        setHome(data[0]);
+        console.log(Home);
       });
   }, []);
 

@@ -13,7 +13,7 @@ function About() {
         return res.json();
       })
       .then((data) => {
-        setAbout(data);
+        setAbout(data[0]);
       });
   }, []);
 
