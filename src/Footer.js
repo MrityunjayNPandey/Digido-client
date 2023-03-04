@@ -4,7 +4,7 @@ const Footer = () => {
   const [Footer, setFooter] = useState(null);
 
   useEffect(() => {
-    fetch("http://api.digidosolutions.com/Footer")
+    fetch("https://api.digidosolutions.com/Footer")
       .then((res) => {
         return res.json();
       })

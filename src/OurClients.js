@@ -5,7 +5,7 @@ function OurClients() {
   const [ourClients, setourClients] = useState(null);
 
   useEffect(() => {
-    fetch("http://api.digidosolutions.com/ourClients")
+    fetch("https://api.digidosolutions.com/ourClients")
       .then((res) => {
         return res.json();
       })

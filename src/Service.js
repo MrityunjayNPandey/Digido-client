@@ -6,7 +6,7 @@ function Service() {
   const [Services, setServices] = useState(null);
 
   useEffect(() => {
-    fetch("http://api.digidosolutions.com/Services")
+    fetch("https://api.digidosolutions.com/Services")
       .then((res) => {
         return res.json();
       })

@@ -22,7 +22,7 @@ function Navbar() {
   const [Services, setServices] = useState(null);
 
   useEffect(() => {
-    fetch("http://api.digidosolutions.com/Services")
+    fetch("https://api.digidosolutions.com/Services")
       .then((res) => {
         return res.json();
       })
@@ -34,7 +34,7 @@ function Navbar() {
   const [ourClients, setourClients] = useState(null);
 
   useEffect(() => {
-    fetch("http://api.digidosolutions.com/ourClients")
+    fetch("https://api.digidosolutions.com/ourClients")
       .then((res) => {
         return res.json();
       })

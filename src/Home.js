@@ -6,7 +6,7 @@ function Home() {
   const [Home, setHome] = useState("");
 
   useEffect(() => {
-    fetch("http://api.digidosolutions.com/Home")
+    fetch("https://api.digidosolutions.com/Home")
       .then((res) => {
         return res.json();
       })
