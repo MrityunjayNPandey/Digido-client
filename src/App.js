@@ -19,6 +19,7 @@ import img6 from "./Pictures/img6.png";
 function App() {
   return (
     <>
+      <img src={img1} />
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />{" "}
