@@ -21,7 +21,7 @@ function Home() {
       <div id="common-1">
         <Common
           name={Home.name}
-          imgsrc={Home.img}
+          imgsrc={Home.img.src}
           Brand="Digido"
           visit="/service"
           btname="Get started"

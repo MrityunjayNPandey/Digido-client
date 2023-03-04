@@ -39,7 +39,7 @@ function OurClients() {
                       key1={index}
                       indexshow={idx}
                       title={ourClient.title}
-                      imgsrc={ourClient.img}
+                      imgsrc={ourClient.img.src}
                       description={ourClient.description}
                       visit={ourClient.visit}
                       btname={ourClient.btname}
