@@ -9,6 +9,12 @@ import Contact from "./Contact";
 import Service from "./Service";
 import Navbar from "./Navbar";
 import OurClients from "./OurClients";
+import img1 from "./Pictures/img1.png";
+import img2 from "./Pictures/img2.png";
+import img3 from "./Pictures/img3.png";
+import img4 from "./Pictures/img4.png";
+import img5 from "./Pictures/img5.png";
+import img6 from "./Pictures/img6.png";
 
 function App() {
   return (
