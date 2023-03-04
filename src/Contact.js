@@ -6,18 +6,19 @@ function onClickButton(event) {
   event.preventDefault();
   document.querySelector("#sub").value = "Submiting..";
   let data = new FormData(form);
-  fetch('https://script.google.com/macros/s/AKfycbw-2dhQR0hs4Iv73XZUcleZKbOGB_pIaqQ61X38H8jYIlBEnuwRVkuKIfP4Jpb33-0x/exec', {
-          method: "POST",
-          body: data
-      })
-      .then(res => res.text())
-      .then(data => {
-          document.querySelector("#msg").innerHTML = data;
-          document.querySelector("#sub").value = "Submit"
-      });  
+  fetch(
+    "https://script.google.com/macros/s/AKfycbw-2dhQR0hs4Iv73XZUcleZKbOGB_pIaqQ61X38H8jYIlBEnuwRVkuKIfP4Jpb33-0x/exec",
+    {
+      method: "POST",
+      body: data,
+    }
+  )
+    .then((res) => res.text())
+    .then((data) => {
+      document.querySelector("#msg").innerHTML = data;
+      document.querySelector("#sub").value = "Submit";
+    });
 }
-
-
 
 function Contact() {
   return (
@@ -29,7 +30,7 @@ function Contact() {
       <div className="container contact-div">
         <div className="row">
           <div className="col-md-6 col-10 mx-auto">
-          <h1 id="msg"></h1>
+            <h1 id="msg"></h1>
             <form>
               <div className="form-group">
                 <label for="exampleFormControlInput1">Enter Full Name</label>
@@ -92,7 +93,8 @@ function Contact() {
                 <button
                   onClick={onClickButton}
                   className="btn btn-outline-primary"
-                  type="submit" id="sub"
+                  type="submit"
+                  id="sub"
                 >
                   Submit form
                 </button>
@@ -101,8 +103,7 @@ function Contact() {
           </div>
         </div>
       </div>
-      <br/>
-     <Footer/>
+      <br />
     </>
   );
 }
