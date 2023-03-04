@@ -22,7 +22,7 @@ function Navbar() {
   const [Services, setServices] = useState(null);
 
   useEffect(() => {
-    fetch("https://digido-full.vercel.app/Services")
+    fetch("http://localhost:8000/Services")
       .then((res) => {
         return res.json();
       })
@@ -34,7 +34,7 @@ function Navbar() {
   const [ourClients, setourClients] = useState(null);
 
   useEffect(() => {
-    fetch("https://digido-full.vercel.app/ourClients")
+    fetch("http://localhost:8000/ourClients")
       .then((res) => {
         return res.json();
       })

@@ -4,7 +4,7 @@ const Footer = () => {
   const [Footer, setFooter] = useState(null);
 
   useEffect(() => {
-    fetch("https://digido-full.vercel.app/Footer")
+    fetch("http://localhost:8000/Footer")
       .then((res) => {
         return res.json();
       })

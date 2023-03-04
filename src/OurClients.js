@@ -5,7 +5,7 @@ function OurClients() {
   const [ourClients, setourClients] = useState(null);
 
   useEffect(() => {
-    fetch("https://digido-full.vercel.app/ourClients")
+    fetch("http://localhost:8000/ourClients")
       .then((res) => {
         return res.json();
       })

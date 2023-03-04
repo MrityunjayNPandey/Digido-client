@@ -6,7 +6,7 @@ function Service() {
   const [Services, setServices] = useState(null);
 
   useEffect(() => {
-    fetch("https://digido-full.vercel.app/Services")
+    fetch("http://localhost:8000/Services")
       .then((res) => {
         return res.json();
       })
