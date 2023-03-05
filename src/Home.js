@@ -4,6 +4,7 @@ import "./index.css";
 
 function Home() {
   const [Home, setHome] = useState("");
+  const [Image, setImage] = useState("");
 
   useEffect(() => {
     fetch("https://api.digidosolutions.com/Home")
@@ -12,22 +13,27 @@ function Home() {
       })
       .then((data) => {
         setHome(data[0]);
+        setImage(Home.img);
         console.log(Home);
       });
   }, []);
 
   return (
     <>
-      <div id="common-1">
-        <Common
-          name={Home.name}
-          imgsrc={Home.img.src}
-          Brand="Digido"
-          visit="/service"
-          btname="Get started"
-          data={Home}
-        />
-      </div>
+      {Home == null ? (
+        <></>
+      ) : (
+        <div id="common-1">
+          <Common
+            name={Home.name}
+            imgsrc={Image}
+            Brand="Digido"
+            visit="/service"
+            btname="Get started"
+            data={Home}
+          />
+        </div>
+      )}
     </>
   );
 }

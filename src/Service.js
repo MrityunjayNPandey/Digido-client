@@ -40,7 +40,7 @@ function Service() {
                       key1={index}
                       indexshow={idx}
                       title={Service.title}
-                      imgsrc={Service.img.src}
+                      imgsrc={Service.img}
                       description={Service.description}
                       visit={Service.visit}
                       btname={Service.btname}

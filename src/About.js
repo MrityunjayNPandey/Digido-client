@@ -19,7 +19,7 @@ function About() {
     <>
       <Common
         name="Welcome to the world of"
-        imgsrc={About.img.src}
+        imgsrc={About.img}
         visit="/contact"
         btname="Contact Us"
         About={About}
