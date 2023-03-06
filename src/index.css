@@ -8,15 +8,13 @@
 }
 
 .navbar {
-  background: #fff;
+  background: #ffffff00;
 }
 
 .navbar-light .navbar-brand {
   font-size: 1.9rem;
   color: #247cb8;
 }
-
-
 
 .nav-item {
   font-size: 1.3rem;
