@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Footer from "./Footer";
 import "./index.css";
+import Navbar from "./Navbar";
 
 function About() {
   const [About, setAbout] = useState("");
@@ -17,13 +19,21 @@ function About() {
 
   return (
     <>
-      <Common
-        name="Welcome to the world of"
-        imgsrc={About.img}
-        visit="/contact"
-        btname="Contact Us"
-        About={About}
-      />
+      {About == "" ? (
+        <></>
+      ) : (
+        <>
+          <Navbar />
+          <Common
+            name="Welcome to the world of"
+            imgsrc={About.img}
+            visit="/contact"
+            btname="Contact Us"
+            About={About}
+          />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

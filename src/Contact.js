@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 function onClickButton(event) {
   let form = document.querySelector("form");
@@ -22,6 +24,7 @@ function onClickButton(event) {
 function Contact() {
   return (
     <>
+      <Navbar />
       <div className="my-5">
         <h1 className="text-center">Contact Us</h1>
       </div>
@@ -103,6 +106,7 @@ function Contact() {
         </div>
       </div>
       <br />
+      <Footer />
     </>
   );
 }

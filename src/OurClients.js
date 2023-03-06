@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { useLocation } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 function OurClients() {
   const [ourClients, setourClients] = useState(null);
 
@@ -23,34 +25,41 @@ function OurClients() {
 
   return (
     <>
-      <div className="my-5">
-        <h1 className="text-center"> Our Clients </h1>{" "}
-      </div>
-
-      <div className="container-fluid mb-5">
-        <div className="row">
-          <div className="col-10 mx-auto">
-            <div className="row gy-4">
-              {ourClients &&
-                ourClients.map((ourClient, index) => (
-                  <>
-                    <Card
-                      key={index}
-                      key1={index}
-                      indexshow={idx}
-                      title={ourClient.title}
-                      imgsrc={ourClient.img}
-                      description={ourClient.description}
-                      visit={ourClient.visit}
-                      btname={ourClient.btname}
-                      data={ourClient}
-                    />{" "}
-                  </>
-                ))}
+      {ourClients == null ? (
+        <></>
+      ) : (
+        <>
+          <Navbar />
+          <div className="my-5">
+            <h1 className="text-center"> Our Clients </h1>{" "}
+          </div>
+          <div className="container-fluid mb-5">
+            <div className="row">
+              <div className="col-10 mx-auto">
+                <div className="row gy-4">
+                  {ourClients &&
+                    ourClients.map((ourClient, index) => (
+                      <>
+                        <Card
+                          key={index}
+                          key1={index}
+                          indexshow={idx}
+                          title={ourClient.title}
+                          imgsrc={ourClient.img}
+                          description={ourClient.description}
+                          visit={ourClient.visit}
+                          btname={ourClient.btname}
+                          data={ourClient}
+                        />{" "}
+                      </>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 }

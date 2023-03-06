@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Common from "./Common";
+import Footer from "./Footer";
 import "./index.css";
+import Navbar from "./Navbar";
 
 function Home() {
   const [Home, setHome] = useState("");
-  const [Image, setImage] = useState("");
 
   useEffect(() => {
     fetch("https://api.digidosolutions.com/Home")
@@ -19,19 +20,23 @@ function Home() {
 
   return (
     <>
-      {Home == null ? (
+      {Home == "" ? (
         <></>
       ) : (
-        <div id="common-1">
-          <Common
-            name={Home.name}
-            imgsrc={Home.img}
-            Brand="Digido"
-            visit="/service"
-            btname="Get started"
-            data={Home}
-          />
-        </div>
+        <>
+          <Navbar />
+          <div id="common-1">
+            <Common
+              name={Home.name}
+              imgsrc={Home.img}
+              Brand="Digido"
+              visit="/service"
+              btname="Get started"
+              data={Home}
+            />
+          </div>
+          <Footer />
+        </>
       )}
     </>
   );

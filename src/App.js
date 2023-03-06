@@ -13,7 +13,6 @@ import OurClients from "./OurClients";
 function App() {
   return (
     <>
-      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />{" "}
         <Route exact path="/about" component={About} />{" "}
@@ -22,7 +21,6 @@ function App() {
         <Route exact path="/OurClients" component={OurClients} />
         <Redirect to="/" />
       </Switch>
-      <Footer />
     </>
   );
 }
