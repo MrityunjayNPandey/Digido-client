@@ -13,7 +13,6 @@ function Home() {
       })
       .then((data) => {
         setHome(data[0]);
-        setImage(Home.img);
         console.log(Home);
       });
   }, []);
@@ -26,7 +25,7 @@ function Home() {
         <div id="common-1">
           <Common
             name={Home.name}
-            imgsrc={Image}
+            imgsrc={Home.img}
             Brand="Digido"
             visit="/service"
             btname="Get started"
