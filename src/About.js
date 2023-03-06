@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
 import "./index.css";
+import Loading from "./Loading";
 import Navbar from "./Navbar";
 
 function About() {
@@ -20,7 +21,9 @@ function About() {
   return (
     <>
       {About == "" ? (
-        <></>
+        <>
+          <Loading />
+        </>
       ) : (
         <>
           <Navbar />

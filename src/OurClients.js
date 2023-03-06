@@ -3,6 +3,7 @@ import Card from "./Card";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Loading from "./Loading";
 function OurClients() {
   const [ourClients, setourClients] = useState(null);
 
@@ -26,7 +27,9 @@ function OurClients() {
   return (
     <>
       {ourClients == null ? (
-        <></>
+        <>
+          <Loading />
+        </>
       ) : (
         <>
           <Navbar />

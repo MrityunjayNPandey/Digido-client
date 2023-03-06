@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Common from "./Common";
 import Footer from "./Footer";
 import "./index.css";
+import Loading from "./Loading";
 import Navbar from "./Navbar";
 
 function Home() {
@@ -21,7 +22,9 @@ function Home() {
   return (
     <>
       {Home == "" ? (
-        <></>
+        <header className="App-header">
+          <Loading />
+        </header>
       ) : (
         <>
           <Navbar />

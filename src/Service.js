@@ -3,6 +3,7 @@ import Card from "./Card";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Loading from "./Loading";
 
 function Service() {
   const [Services, setServices] = useState(null);
@@ -28,7 +29,9 @@ function Service() {
   return (
     <>
       {Services == null ? (
-        <></>
+        <>
+          <Loading />
+        </>
       ) : (
         <>
           <Navbar />
