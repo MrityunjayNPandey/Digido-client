@@ -7,6 +7,7 @@ import Loading from "./Loading";
 
 function Service() {
   const [Services, setServices] = useState(null);
+  const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
     fetch("https://api.digidosolutions.com/Services")
@@ -15,6 +16,15 @@ function Service() {
       })
       .then((data) => {
         setServices(data);
+      });
+
+    fetch("https://api.digidosolutions.com/Footer")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setfooterData(data);
+        console.log(footerData);
       });
   }, []);
 
@@ -28,7 +38,7 @@ function Service() {
 
   return (
     <>
-      {Services == null ? (
+      {Services == null || footerData == null ? (
         <>
           <Loading />
         </>
@@ -62,7 +72,7 @@ function Service() {
               </div>
             </div>
           </div>
-          <Footer />
+          <Footer Footer={footerData} />
         </>
       )}
     </>

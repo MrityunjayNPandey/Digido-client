@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 
 function About() {
   const [About, setAbout] = useState("");
+  const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
     fetch("https://api.digidosolutions.com/About")
@@ -16,11 +17,20 @@ function About() {
       .then((data) => {
         setAbout(data[0]);
       });
+
+    fetch("https://api.digidosolutions.com/Footer")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setfooterData(data);
+        console.log(footerData);
+      });
   }, []);
 
   return (
     <>
-      {About == "" ? (
+      {About == "" || footerData == null ? (
         <>
           <Loading />
         </>
@@ -34,7 +44,7 @@ function About() {
             btname="Contact Us"
             About={About}
           />
-          <Footer />
+          <Footer Footer={footerData} />
         </>
       )}
     </>

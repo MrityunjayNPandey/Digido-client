@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 
 function Home() {
   const [Home, setHome] = useState("");
+  const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
     fetch("https://api.digidosolutions.com/Home")
@@ -17,11 +18,20 @@ function Home() {
         setHome(data[0]);
         console.log(Home);
       });
+
+    fetch("https://api.digidosolutions.com/Footer")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setfooterData(data);
+        console.log(footerData);
+      });
   }, []);
 
   return (
     <>
-      {Home == "" ? (
+      {Home == "" || footerData == null ? (
         <header className="App-header">
           <Loading />
         </header>
@@ -38,7 +48,7 @@ function Home() {
               data={Home}
             />
           </div>
-          <Footer />
+          <Footer Footer={footerData} />
         </>
       )}
     </>

@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Loading from "./Loading";
 function OurClients() {
   const [ourClients, setourClients] = useState(null);
+  const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
     fetch("https://api.digidosolutions.com/ourClients")
@@ -14,6 +15,15 @@ function OurClients() {
       })
       .then((data) => {
         setourClients(data);
+      });
+
+    fetch("https://api.digidosolutions.com/Footer")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setfooterData(data);
+        console.log(footerData);
       });
   }, []);
 
@@ -26,7 +36,7 @@ function OurClients() {
 
   return (
     <>
-      {ourClients == null ? (
+      {ourClients == null || footerData == null ? (
         <>
           <Loading />
         </>
@@ -60,7 +70,7 @@ function OurClients() {
               </div>
             </div>
           </div>
-          <Footer />
+          <Footer Footer={footerData} />
         </>
       )}
     </>
