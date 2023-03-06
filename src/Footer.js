@@ -100,7 +100,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      Phone : {Footer[0].value}
+                      {Footer[0].name} : {Footer[0].value}
                     </a>
                   </li>
                   <li>
@@ -108,7 +108,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      E-mail : {Footer[1].value}
+                      {Footer[1].name} : {Footer[1].value}
                     </a>
                   </li>
                   <li>
@@ -116,7 +116,7 @@ const Footer = () => {
                       class="text-gray-400 hover:text-white"
                       style={{ textDecoration: "none" }}
                     >
-                      Address : {Footer[2].address}
+                      {Footer[2].name} : {Footer[2].value}
                     </a>
                   </li>
                 </nav>

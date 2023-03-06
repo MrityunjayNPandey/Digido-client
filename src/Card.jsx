@@ -31,7 +31,7 @@ function Card({ title, imgsrc, description, visit, btname, data, indexshow = -1,
         </>
         ):(<div className="col-md-4 col-10 mx-auto">
         <div className="card">
-          <img src={imgsrc} className="card-img-top" alt="..." />
+          <img src={imgsrc} loading="lazy" className="card-img-top" alt="..." width="400" height="400"/>
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">

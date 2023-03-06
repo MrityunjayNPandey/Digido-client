@@ -37,8 +37,10 @@ function Common({ name, Brand, imgsrc, visit, btname, data}) {
                 <div className="col-lg-6 order-1 order-lg-2 header-img">
                   <img
                     src={imgsrc}
+                    loading="lazy"
                     className="img-fluid animated"
                     alt="dataImg"
+                    width="400" height="400"
                   />
                 </div>
               </div>
