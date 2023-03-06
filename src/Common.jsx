@@ -40,7 +40,6 @@ function Common({ name, Brand, imgsrc, visit, btname, data}) {
                     loading="lazy"
                     className="img-fluid animated"
                     alt="dataImg"
-                    width="400" height="400"
                   />
                 </div>
               </div>
