@@ -115,6 +115,7 @@ const Footer = ({ Footer }) => {
                   <a
                     class="text-gray-400 hover:text-white"
                     style={{ textDecoration: "none" }}
+                    href={Footer[3].link}
                   >
                     {Footer[3].link}
                   </a>
@@ -123,6 +124,7 @@ const Footer = ({ Footer }) => {
                   <a
                     class="text-gray-400 hover:text-white"
                     style={{ textDecoration: "none" }}
+                    href={Footer[4].link}
                   >
                     {Footer[4].link}
                   </a>
@@ -131,6 +133,7 @@ const Footer = ({ Footer }) => {
                   <a
                     class="text-gray-400 hover:text-white"
                     style={{ textDecoration: "none" }}
+                    href={Footer[6].link}
                   >
                     {Footer[5].link}
                   </a>
