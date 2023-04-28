@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 function onClickButton(event) {
   let form = document.querySelector("form");
   event.preventDefault();
-  document.querySelector("#sub").value = "Submiting..";
+  document.querySelector("#sub").innerHTML = "Submiting..";
   let data = new FormData(form);
   fetch(
     "https://script.google.com/macros/s/AKfycbw-2dhQR0hs4Iv73XZUcleZKbOGB_pIaqQ61X38H8jYIlBEnuwRVkuKIfP4Jpb33-0x/exec",
@@ -18,7 +18,7 @@ function onClickButton(event) {
     .then((res) => res.text())
     .then((data) => {
       document.querySelector("#msg").innerHTML = data;
-      document.querySelector("#sub").value = "Submit";
+      document.querySelector("#sub").innerHTML = "Submit Form";
     });
 }
 
