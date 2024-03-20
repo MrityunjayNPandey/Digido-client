@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
-import "./index.css";
 import Loading from "./Loading";
 import Navbar from "./Navbar";
+import "./index.css";
 
 function About() {
   const [About, setAbout] = useState("");
   const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.digidosolutions.com/About")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/About`)
       .then((res) => {
         return res.json();
       })
@@ -18,7 +18,7 @@ function About() {
         setAbout(data[0]);
       });
 
-    fetch("https://api.digidosolutions.com/Footer")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Footer`)
       .then((res) => {
         return res.json();
       })

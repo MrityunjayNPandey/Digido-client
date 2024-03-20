@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
 import { useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
+import Card from "./Card";
 import Footer from "./Footer";
 import Loading from "./Loading";
+import Navbar from "./Navbar";
 
 function Service() {
   const [Services, setServices] = useState(null);
   const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.digidosolutions.com/Services")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Services`)
       .then((res) => {
         return res.json();
       })
@@ -18,7 +18,7 @@ function Service() {
         setServices(data);
       });
 
-    fetch("https://api.digidosolutions.com/Footer")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Footer`)
       .then((res) => {
         return res.json();
       })

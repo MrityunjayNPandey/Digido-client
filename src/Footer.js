@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Footer = ({ Footer }) => {
-  
   return (
     <>
       <footer class="text-gray-400 bg-gray-900 body-font">

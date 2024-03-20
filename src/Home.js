@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Common from "./Common";
 import Footer from "./Footer";
-import "./index.css";
 import Loading from "./Loading";
 import Navbar from "./Navbar";
+import "./index.css";
 
 function Home() {
   const [Home, setHome] = useState("");
   const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.digidosolutions.com/Home")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Home`)
       .then((res) => {
         return res.json();
       })
@@ -19,7 +19,7 @@ function Home() {
         console.log(Home);
       });
 
-    fetch("https://api.digidosolutions.com/Footer")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Footer`)
       .then((res) => {
         return res.json();
       })

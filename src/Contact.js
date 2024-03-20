@@ -26,7 +26,7 @@ function Contact() {
   const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.digidosolutions.com/Footer")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Footer`)
       .then((res) => {
         return res.json();
       })

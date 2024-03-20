@@ -1,7 +1,7 @@
-import "./index.css";
-import './style1.css'
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import "./index.css";
+import "./style1.css";
 
 function Navbar() {
   const [open, setOpen] = React.useState(false);
@@ -22,7 +22,7 @@ function Navbar() {
   const [Services, setServices] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.digidosolutions.com/Services")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Services`)
       .then((res) => {
         return res.json();
       })
@@ -34,7 +34,7 @@ function Navbar() {
   const [ourClients, setourClients] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.digidosolutions.com/ourClients")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/OurClients`)
       .then((res) => {
         return res.json();
       })
@@ -42,7 +42,7 @@ function Navbar() {
         setourClients(data);
       });
   }, []);
-  
+
   return (
     <>
       <div className="container-fluid nav_bg">
@@ -52,29 +52,72 @@ function Navbar() {
               <NavLink className="navbar-brand" to="/">
                 Digido
               </NavLink>
-              <button className="navbar-toggler" type="button" onClick={handleOpen2}>
-                <span className="navbar-toggler-icon">
-                </span>
+              <button
+                className="navbar-toggler"
+                type="button"
+                onClick={handleOpen2}
+              >
+                <span className="navbar-toggler-icon"></span>
               </button>
               {open2 ? (
-                      <ul style={{ position: "fixed", right:"10px", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px", marginTop:"125px"}}>
-                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/' className="nav-link">Home</NavLink>
-                        </div>
-                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/service' className="nav-link">Services</NavLink>
-                        </div>
-                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/about' className="nav-link">About Us</NavLink>
-                        </div>
-                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/OurClients' className="nav-link">Our Clients</NavLink>
-                        </div>
-                        <div onClick={handleOpen2} className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                          <NavLink to='/contact' className="nav-link">Contact Us</NavLink>
-                        </div>
-                      </ul>
-                    ) : null}
+                <ul
+                  style={{
+                    position: "fixed",
+                    right: "10px",
+                    zIndex: "2",
+                    backgroundColor: "white",
+                    border: "1px solid lightgrey",
+                    borderRadius: "5px",
+                    marginTop: "125px",
+                  }}
+                >
+                  <div
+                    onClick={handleOpen2}
+                    className="nav-item"
+                    style={{ display: "block", marginRight: "20px" }}
+                  >
+                    <NavLink to="/" className="nav-link">
+                      Home
+                    </NavLink>
+                  </div>
+                  <div
+                    onClick={handleOpen2}
+                    className="nav-item"
+                    style={{ display: "block", marginRight: "20px" }}
+                  >
+                    <NavLink to="/service" className="nav-link">
+                      Services
+                    </NavLink>
+                  </div>
+                  <div
+                    onClick={handleOpen2}
+                    className="nav-item"
+                    style={{ display: "block", marginRight: "20px" }}
+                  >
+                    <NavLink to="/about" className="nav-link">
+                      About Us
+                    </NavLink>
+                  </div>
+                  <div
+                    onClick={handleOpen2}
+                    className="nav-item"
+                    style={{ display: "block", marginRight: "20px" }}
+                  >
+                    <NavLink to="/OurClients" className="nav-link">
+                      Our Clients
+                    </NavLink>
+                  </div>
+                  <div
+                    onClick={handleOpen2}
+                    className="nav-item"
+                    style={{ display: "block", marginRight: "20px" }}
+                  >
+                    <NavLink to="/contact" className="nav-link">
+                      Contact Us
+                    </NavLink>
+                  </div>
+                </ul>
+              ) : null}
               <div
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
@@ -85,27 +128,46 @@ function Navbar() {
                       Home <span className="sr-only"></span>
                     </NavLink>
                   </li>
-                  <li className="nav-item" onMouseEnter={handleOpen}
-                      onMouseLeave={handleOpen}>
+                  <li
+                    className="nav-item"
+                    onMouseEnter={handleOpen}
+                    onMouseLeave={handleOpen}
+                  >
                     <NavLink
                       activeClassName="menu_active"
                       className="nav-link"
-                      to="/service"                      
+                      to="/service"
                     >
                       Services
                     </NavLink>
                     {open ? (
-                      <ul className="menu" style={{position: "absolute", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px"}}>
-                        {Services && Services.map((Service, index) => (
-                            <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                              <NavLink 
+                      <ul
+                        className="menu"
+                        style={{
+                          position: "absolute",
+                          zIndex: "2",
+                          backgroundColor: "white",
+                          border: "1px solid lightgrey",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        {Services &&
+                          Services.map((Service, index) => (
+                            <li
+                              className="nav-item"
+                              style={{ display: "block", marginRight: "20px" }}
+                            >
+                              <NavLink
                                 to={{
-                                  pathname:'./Service',
-                                  state:{index}
-                                }} 
-                              className="nav-link">{Service.title}</NavLink>
+                                  pathname: "./Service",
+                                  state: { index },
+                                }}
+                                className="nav-link"
+                              >
+                                {Service.title}
+                              </NavLink>
                             </li>
-                        ))}
+                          ))}
                       </ul>
                     ) : null}
                   </li>
@@ -118,8 +180,11 @@ function Navbar() {
                       About Us
                     </NavLink>
                   </li>
-                  <li className="nav-item" onMouseEnter={handleOpen1}
-                      onMouseLeave={handleOpen1}>
+                  <li
+                    className="nav-item"
+                    onMouseEnter={handleOpen1}
+                    onMouseLeave={handleOpen1}
+                  >
                     <NavLink
                       activeClassName="menu_active"
                       className="nav-link"
@@ -128,17 +193,34 @@ function Navbar() {
                       Our Clients
                     </NavLink>
                     {open1 ? (
-                      <ul className="menu" style={{position: "absolute", zIndex:"2", backgroundColor:"white", border:"1px solid lightgrey", borderRadius:"5px"}}>
-                      {ourClients && ourClients.map((ourClient, index) => (
-                            <li className="nav-item" style={{display:"block", marginRight:"20px"}}>
-                              <NavLink to={{
-                                  pathname:'./ourClients',
-                                  state:{index}
-                                }} 
-                               className="nav-link">{ourClient.title}</NavLink>
+                      <ul
+                        className="menu"
+                        style={{
+                          position: "absolute",
+                          zIndex: "2",
+                          backgroundColor: "white",
+                          border: "1px solid lightgrey",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        {ourClients &&
+                          ourClients.map((ourClient, index) => (
+                            <li
+                              className="nav-item"
+                              style={{ display: "block", marginRight: "20px" }}
+                            >
+                              <NavLink
+                                to={{
+                                  pathname: "./ourClients",
+                                  state: { index },
+                                }}
+                                className="nav-link"
+                              >
+                                {ourClient.title}
+                              </NavLink>
                             </li>
-                        ))}
-                    </ul>
+                          ))}
+                      </ul>
                     ) : null}
                   </li>
                   <li className="nav-item">
@@ -149,7 +231,7 @@ function Navbar() {
                     >
                       Contact Us
                     </NavLink>
-                  </li>                  
+                  </li>
                 </ul>
               </div>
             </nav>

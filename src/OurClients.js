@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
 import { useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
+import Card from "./Card";
 import Footer from "./Footer";
 import Loading from "./Loading";
+import Navbar from "./Navbar";
 function OurClients() {
   const [ourClients, setourClients] = useState(null);
   const [footerData, setfooterData] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.digidosolutions.com/ourClients")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/OurClients`)
       .then((res) => {
         return res.json();
       })
@@ -17,7 +17,7 @@ function OurClients() {
         setourClients(data);
       });
 
-    fetch("https://api.digidosolutions.com/Footer")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/Footer`)
       .then((res) => {
         return res.json();
       })
